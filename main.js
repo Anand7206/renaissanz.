@@ -10,38 +10,38 @@ const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY_PLACEHOLDER';
 // Hero Slider Data Array (6 slides total)
 const HERO_SLIDES_DATA = [
   {
-    image: './assets/hero/hero-01.webp',
+    image: './assets/hero/hero-01.jpg',
     type: 'photo',
     caption: 'Edition 5 • Memories • with Tejasswi Prakash',
     ribbon: 'NOMINATIONS OPEN',
     alt: 'Renaissanz NextGen Leader Award Edition 5 trophy presentation with celebrity guest Tejasswi Prakash'
   },
   {
-    image: './assets/hero/hero-02.webp',
+    image: './assets/hero/hero-02.jpg',
     type: 'poster',
     caption: 'UPCOMING • Edition 6 • with Vaani Kapoor • 14 Dec 2026',
     alt: 'Renaissanz NextGen Leader Award Edition 6 official poster featuring celebrity guest Vaani Kapoor'
   },
   {
-    image: './assets/hero/hero-03.webp',
+    image: './assets/hero/hero-03.jpg',
     type: 'photo',
     caption: 'Edition 5 • Memories • with Ekta Kapoor',
     alt: 'Renaissanz NextGen Leader Award Edition 5 trophy presentation moment with Ekta Kapoor'
   },
   {
-    image: './assets/hero/hero-05.webp',
+    image: './assets/hero/hero-05.jpg',
     type: 'photo',
     caption: 'Edition 4 • Memories • with Shehnaaz Gill',
     alt: 'Renaissanz NextGen Leader Award Edition 4 award presentation moment with Shehnaaz Gill'
   },
   {
-    image: './assets/hero/hero-06.webp',
+    image: './assets/hero/hero-06.jpg',
     type: 'photo',
     caption: 'Honouring Achievers • Shamita Shetty',
     alt: 'Certificate presentation moment on stage with celebrity guest Shamita Shetty'
   },
   {
-    image: './assets/hero/hero-08.webp',
+    image: './assets/hero/hero-08.jpg',
     type: 'photo',
     caption: 'SammRenaissance Fashion Show • Runway',
     alt: 'SammRenaissance fashion runway moment at past award edition'
@@ -161,6 +161,7 @@ function initHeroSlider() {
     slideEl.innerHTML = `
       ${ribbonHTML}
       <img src="${slide.image}" 
+           onerror="if(this.src.indexOf('.jpg')!==-1){this.src=this.src.replace('.jpg','.png');}else if(this.src.indexOf('.png')!==-1){this.src=this.src.replace('.png','.webp');}"
            alt="${slide.alt}" 
            class="${imgClass}" 
            width="1000" height="1250"
