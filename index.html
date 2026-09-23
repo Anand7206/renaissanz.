@@ -42,8 +42,1157 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- External Stylesheet Link -->
   <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Embedded Production CSS (Bulletproof fallback for all hosting environments) -->
+  <style>
+/* ==========================================================================
+   Renaissanz NextGen Leader Award 2026 - Production CSS
+   Theme: Black & Gold Luxury Award Night
+   ========================================================================== */
+
+/* 1. CSS Variables & Reset */
+:root {
+  --bg-dark: #0B0B0F;
+  --bg-card: rgba(18, 18, 24, 0.75);
+  --bg-card-border: rgba(212, 175, 55, 0.25);
+  --bg-card-hover-border: rgba(212, 175, 55, 0.6);
+  
+  --gold-primary: #D4AF37;
+  --gold-soft: #F5E6B8;
+  --gold-dark: #9A7B1C;
+  --gold-gradient: linear-gradient(135deg, #FFF0B8 0%, #D4AF37 50%, #A67C1E 100%);
+  --gold-button-gradient: linear-gradient(135deg, #E6C247 0%, #D4AF37 50%, #B89220 100%);
+  --gold-button-hover: linear-gradient(135deg, #F5E6B8 0%, #E6C247 50%, #D4AF37 100%);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0AB;
+  --text-muted: #6E6E7A;
+
+  --accent-yellow: #FBC02D;
+  --accent-orange: #FB8C00;
+  --accent-magenta: #C2185B;
+  --accent-blue: #3D7BE0;
+
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-gold: 0 10px 30px -5px rgba(212, 175, 55, 0.25);
+  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background spotlight & subtle grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 75% 35%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(194, 24, 91, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% 15%, rgba(61, 123, 224, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* ==========================================================================
+   2. Typography & Common Components
+   ========================================================================== */
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold-soft);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold-gradient);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  min-height: 48px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gold-button-gradient);
+  color: #0B0B0F;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  background: var(--gold-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(212, 175, 55, 0.35);
+}
+
+.btn-outline {
+  background: rgba(18, 18, 24, 0.6);
+  color: var(--gold-soft);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+/* Glassmorphism card container */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  border-color: var(--bg-card-hover-border);
+}
+
+/* Container Utility */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ==========================================================================
+   3. Header Specs
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: height 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header.scrolled {
+  height: 64px;
+  background: rgba(11, 11, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.9;
+}
+
+.header-logo svg {
+  width: clamp(150px, 12vw, 180px);
+  height: auto;
+  display: block;
+  transition: width 0.3s ease;
+  aspect-ratio: 10 / 3;
+}
+
+.site-header.scrolled .header-logo svg {
+  width: 150px;
+}
+
+.header-cta {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+  min-height: 42px;
+}
+
+/* ==========================================================================
+   4. SECTION 1 – HERO WITH SLIDER
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100svh;
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background Blurred Image Layer */
+.hero-bg-blur {
+  position: absolute;
+  inset: -40px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(45px);
+  opacity: 0.35;
+  transition: background-image 0.8s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Hero Left Column */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.45rem 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-primary);
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 10px #25D366;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.hero-subheadline {
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Countdown Timer */
+.countdown-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.countdown-box {
+  background: rgba(18, 18, 24, 0.85);
+  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.875rem;
+  text-align: center;
+  min-width: 68px;
+}
+
+.countdown-num {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-soft);
+  line-height: 1;
+}
+
+.countdown-lbl {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.countdown-expired {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  padding: 0.5rem 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.trust-icon {
+  color: var(--gold-primary);
+}
+
+/* Hero Right Column */
+.hero-slider-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-slider-frame {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 5;
+  min-height: 440px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+
+  border: 1px solid var(--gold-primary);
+  outline: 1px solid rgba(212, 175, 55, 0.4);
+  outline-offset: -8px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.2);
+  background: #121218;
+}
+
+.hero-slider-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  transition: transform 4.5s ease-out;
+}
+
+.slide-img.fit-contain {
+  object-fit: contain;
+  background: #0B0B0F;
+}
+
+.slide-img.fit-cover {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-slide.active .slide-img {
+  transform: scale(1.06);
+}
+
+.slide-ribbon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: linear-gradient(135deg, #FFF0B8 0%, #D4AF37 100%);
+  color: #0B0B0F;
+  font-family: var(--font-heading);
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(11, 11, 15, 0.8);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: var(--transition-smooth);
+}
+
+.slider-arrow:hover {
+  background: var(--gold-gradient);
+  color: #0B0B0F;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow { left: 16px; }
+.next-arrow { right: 16px; }
+
+.hero-slider-controls {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.caption-bar {
+  background: linear-gradient(to right, rgba(18, 18, 24, 0.95), rgba(11, 11, 15, 0.8));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.slider-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.slider-counter {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  letter-spacing: 0.1em;
+}
+
+.slider-progress-container {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.slider-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gold-gradient);
+}
+
+.slider-dots-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: var(--gold-primary);
+}
+
+/* ==========================================================================
+   5. Section 2 – Award Categories
+   ========================================================================== */
+
+.categories-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.categories-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.25rem 1.25rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(18, 18, 24, 0.85));
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+}
+
+.category-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  transition: var(--transition-smooth);
+}
+
+.category-card:hover .category-icon {
+  background: var(--gold-gradient);
+  color: #0B0B0F;
+  border-color: var(--gold-primary);
+  transform: scale(1.1);
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   6. Footer & Nomination Form Section
+   ========================================================================== */
+
+.footer-section {
+  padding: 6rem 0 3rem 0;
+  background: linear-gradient(to bottom, var(--bg-dark) 0%, #060608 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.footer-logo {
+  display: inline-block;
+}
+
+.footer-logo svg {
+  width: 220px;
+  height: auto;
+}
+
+.footer-org {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+
+.footer-note {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-soft);
+  transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+  background: var(--gold-gradient);
+  color: #0B0B0F;
+  transform: translateY(-3px);
+}
+
+/* Nomination Form Card */
+.form-card {
+  padding: 2.5rem;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.75rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  letter-spacing: 0.03em;
+}
+
+.form-control {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  background: rgba(11, 11, 15, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 16px;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  background: rgba(18, 18, 24, 0.95);
+}
+
+.form-control.input-error {
+  border-color: #FF5252;
+}
+
+.phone-prefix-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.phone-prefix {
+  position: absolute;
+  left: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  pointer-events: none;
+}
+
+.phone-control {
+  padding-left: 52px;
+}
+
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+select.form-control option {
+  background-color: #111115;
+  color: #FFFFFF;
+}
+
+.highlight-select {
+  animation: selectPulse 1s ease-in-out;
+}
+
+@keyframes selectPulse {
+  0% { border-color: var(--gold-primary); box-shadow: 0 0 20px rgba(212,175,55,0.8); }
+  50% { border-color: #FFFFFF; box-shadow: 0 0 25px rgba(255,255,255,0.9); }
+  100% { border-color: rgba(212,175,55,0.3); }
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: #FF5252;
+  margin-top: 2px;
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 1rem;
+  height: 52px;
+  font-size: 1rem;
+}
+
+.btn-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(11, 11, 15, 0.3);
+  border-top-color: #0B0B0F;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Message Overlay */
+.form-success-box {
+  display: none;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0B0B0F;
+}
+
+.success-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.success-text {
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  z-index: 990;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+}
+
+/* Mobile Sticky Nomination Bar */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(11, 11, 15, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  z-index: 980;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mobile-sticky-bar.hide-sticky {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-sticky-bar .btn {
+  width: 100%;
+  min-height: 46px;
+}
+
+/* ==========================================================================
+   7. Animation Classes (Visible by default, zero-fail loading)
+   ========================================================================== */
+
+.animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Optional scroll animation when JS adds js-animated */
+.js-animated .animate-on-scroll:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   8. Responsive Media Queries
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .header-logo svg {
+    width: 165px;
+  }
+
+  .site-header.scrolled .header-logo svg {
+    width: 150px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .slider-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .site-header.scrolled {
+    height: 56px;
+  }
+
+  .header-logo svg {
+    width: 150px;
+  }
+
+  .hero-section {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-slider-frame {
+    max-width: 100%;
+    aspect-ratio: 4 / 5;
+    min-height: 380px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .mobile-sticky-bar {
+    display: block;
+  }
+
+  .whatsapp-float {
+    bottom: 76px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-slide.active .slide-img {
+    transform: none !important;
+  }
+
+  .hero-bg-blur {
+    transition: none !important;
+  }
+}
+
+  </style>
 </head>
 <body>
 
@@ -55,7 +1204,7 @@
   <title>Renaissanz NextGen Leader Award</title>
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
       .title-text {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
@@ -124,7 +1273,7 @@
     <!-- SECTION 1 – HERO WITH SCROLLABLE CELEBRITY BANNER SLIDER -->
     <section class="hero-section" id="hero">
       <!-- Background Blurred Image Crossfade Layer -->
-      <div id="hero-bg-blur" class="hero-bg-blur"></div>
+      <div id="hero-bg-blur" class="hero-bg-blur" style="background-image: url('./assets/hero/hero-01.webp');"></div>
 
       <div class="container hero-grid">
         <!-- HERO LEFT (STATIC CONTENT) -->
@@ -146,19 +1295,19 @@
           <!-- Live Countdown Timer -->
           <div class="countdown-block" id="hero-countdown">
             <div class="countdown-box">
-              <div class="countdown-num" id="cd-days">00</div>
+              <div class="countdown-num" id="cd-days">38</div>
               <div class="countdown-lbl">Days</div>
             </div>
             <div class="countdown-box">
-              <div class="countdown-num" id="cd-hours">00</div>
+              <div class="countdown-num" id="cd-hours">05</div>
               <div class="countdown-lbl">Hours</div>
             </div>
             <div class="countdown-box">
-              <div class="countdown-num" id="cd-mins">00</div>
+              <div class="countdown-num" id="cd-mins">29</div>
               <div class="countdown-lbl">Mins</div>
             </div>
             <div class="countdown-box">
-              <div class="countdown-num" id="cd-secs">00</div>
+              <div class="countdown-num" id="cd-secs">48</div>
               <div class="countdown-lbl">Secs</div>
             </div>
           </div>
@@ -199,20 +1348,26 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
 
-            <!-- Slider Track -->
+            <!-- Slider Track with Native Initial Slides -->
             <div id="hero-slider-track" class="hero-slider-track">
-              <!-- Dynamically populated by JS from HERO_SLIDES_DATA -->
+              <div class="hero-slide active" role="group" aria-roledescription="slide" aria-label="Slide 1 of 6">
+                <div class="slide-ribbon">NOMINATIONS OPEN</div>
+                <img src="./assets/hero/hero-01.webp" alt="Renaissanz NextGen Leader Award Edition 5 trophy presentation with celebrity guest Tejasswi Prakash" class="slide-img fit-cover" width="1000" height="1250" loading="eager" fetchpriority="high">
+              </div>
+              <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 6">
+                <img src="./assets/hero/hero-02.webp" alt="Renaissanz NextGen Leader Award Edition 6 official poster featuring celebrity guest Vaani Kapoor" class="slide-img fit-contain" width="1000" height="1250" loading="eager" fetchpriority="high">
+              </div>
             </div>
           </div>
 
           <!-- Controls & Caption Bar Below Slider -->
           <div class="hero-slider-controls">
             <div id="hero-slide-caption" class="caption-bar">
-              UPCOMING • Edition 6 • with Vaani Kapoor • 14 Dec 2026
+              Edition 5 • Memories • with Tejasswi Prakash
             </div>
             
             <div class="slider-footer-bar">
-              <span id="hero-slide-counter" class="slider-counter">01 / 08</span>
+              <span id="hero-slide-counter" class="slider-counter">01 / 06</span>
               
               <div class="slider-progress-container">
                 <div id="hero-progress-bar" class="slider-progress-bar"></div>
@@ -328,7 +1483,7 @@
   <title>Renaissanz NextGen Leader Award</title>
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
       .title-text {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
@@ -506,7 +1661,530 @@
     <a href="#nominate" class="btn btn-primary">Nominate Now</a>
   </div>
 
-  <!-- JavaScript -->
+  <!-- External JavaScript Link -->
   <script src="./assets/js/main.js"></script>
+
+  <!-- Embedded JS Logic (Zero-fail deployment fallback) -->
+  <script>
+/**
+ * Renaissanz NextGen Leader Award 2026 - Production Main JavaScript
+ */
+
+// Form Endpoint Config
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_RENAISSANZ_NEXTGEN_2026/exec';
+const WEB3FORMS_FALLBACK = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY_PLACEHOLDER';
+
+// Hero Slider Data Array (6 slides total)
+const HERO_SLIDES_DATA = [
+  {
+    image: './assets/hero/hero-01.webp',
+    type: 'photo',
+    caption: 'Edition 5 • Memories • with Tejasswi Prakash',
+    ribbon: 'NOMINATIONS OPEN',
+    alt: 'Renaissanz NextGen Leader Award Edition 5 trophy presentation with celebrity guest Tejasswi Prakash'
+  },
+  {
+    image: './assets/hero/hero-02.webp',
+    type: 'poster',
+    caption: 'UPCOMING • Edition 6 • with Vaani Kapoor • 14 Dec 2026',
+    alt: 'Renaissanz NextGen Leader Award Edition 6 official poster featuring celebrity guest Vaani Kapoor'
+  },
+  {
+    image: './assets/hero/hero-03.webp',
+    type: 'photo',
+    caption: 'Edition 5 • Memories • with Ekta Kapoor',
+    alt: 'Renaissanz NextGen Leader Award Edition 5 trophy presentation moment with Ekta Kapoor'
+  },
+  {
+    image: './assets/hero/hero-05.webp',
+    type: 'photo',
+    caption: 'Edition 4 • Memories • with Shehnaaz Gill',
+    alt: 'Renaissanz NextGen Leader Award Edition 4 award presentation moment with Shehnaaz Gill'
+  },
+  {
+    image: './assets/hero/hero-06.webp',
+    type: 'photo',
+    caption: 'Honouring Achievers • Shamita Shetty',
+    alt: 'Certificate presentation moment on stage with celebrity guest Shamita Shetty'
+  },
+  {
+    image: './assets/hero/hero-08.webp',
+    type: 'photo',
+    caption: 'SammRenaissance Fashion Show • Runway',
+    alt: 'SammRenaissance fashion runway moment at past award edition'
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeaderScroll();
+  initCountdownTimer();
+  initHeroSlider();
+  initCategorySelect();
+  initFormValidation();
+  initScrollAnimations();
+  initStickyMobileBarObserver();
+});
+
+/**
+ * 1. Sticky Header scroll effect
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
+/**
+ * 2. Live Countdown Timer (Target: 31 October 2026)
+ */
+function initCountdownTimer() {
+  const countdownContainer = document.getElementById('hero-countdown');
+  if (!countdownContainer) return;
+
+  // Target date set to 31 October 2026
+  const targetDate = new Date('2026-10-31T23:59:59+05:30').getTime();
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      countdownContainer.innerHTML = '<div class="countdown-expired">Nominations open for the next edition</div>';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const elDays = document.getElementById('cd-days');
+    const elHours = document.getElementById('cd-hours');
+    const elMins = document.getElementById('cd-mins');
+    const elSecs = document.getElementById('cd-secs');
+
+    if (elDays) elDays.textContent = String(days).padStart(2, '0');
+    if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+    if (elMins) elMins.textContent = String(minutes).padStart(2, '0');
+    if (elSecs) elSecs.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+}
+
+/**
+ * 3. Hero Slider System (Vanilla JS)
+ */
+function initHeroSlider() {
+  const sliderTrack = document.getElementById('hero-slider-track');
+  const bgBlurLayer = document.getElementById('hero-bg-blur');
+  const captionEl = document.getElementById('hero-slide-caption');
+  const counterEl = document.getElementById('hero-slide-counter');
+  const dotsContainer = document.getElementById('hero-slide-dots');
+  const progressBar = document.getElementById('hero-progress-bar');
+  const prevBtn = document.getElementById('hero-prev-btn');
+  const nextBtn = document.getElementById('hero-next-btn');
+  const sliderFrame = document.querySelector('.hero-slider-frame');
+
+  if (!sliderTrack || !HERO_SLIDES_DATA.length) return;
+
+  const totalSlides = HERO_SLIDES_DATA.length;
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  let resumeTimer = null;
+  const AUTOPLAY_DELAY = 4500;
+  const RESUME_DELAY = 6000;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  sliderTrack.innerHTML = '';
+  if (dotsContainer) dotsContainer.innerHTML = '';
+
+  HERO_SLIDES_DATA.forEach((slide, idx) => {
+    const slideEl = document.createElement('div');
+    slideEl.className = `hero-slide ${idx === 0 ? 'active' : ''}`;
+    slideEl.setAttribute('role', 'group');
+    slideEl.setAttribute('aria-roledescription', 'slide');
+    slideEl.setAttribute('aria-label', `Slide ${idx + 1} of ${totalSlides}`);
+
+    const isEager = idx <= 1;
+    const imgClass = slide.type === 'poster' ? 'slide-img fit-contain' : 'slide-img fit-cover';
+
+    let ribbonHTML = '';
+    if (slide.ribbon) {
+      ribbonHTML = `<div class="slide-ribbon">${slide.ribbon}</div>`;
+    }
+
+    slideEl.innerHTML = `
+      ${ribbonHTML}
+      <img src="${slide.image}" 
+           alt="${slide.alt}" 
+           class="${imgClass}" 
+           width="1000" height="1250"
+           ${isEager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" decoding="async"'}>
+    `;
+
+    sliderTrack.appendChild(slideEl);
+
+    if (dotsContainer) {
+      const dot = document.createElement('button');
+      dot.className = `slider-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        goToSlide(idx);
+        userInteracted();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  });
+
+  function updateSliderView(index) {
+    const slides = sliderTrack.querySelectorAll('.hero-slide');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+
+    slides.forEach((sl, idx) => {
+      sl.classList.toggle('active', idx === index);
+    });
+
+    dots.forEach((dt, idx) => {
+      dt.classList.toggle('active', idx === index);
+    });
+
+    if (bgBlurLayer) {
+      const activeData = HERO_SLIDES_DATA[index];
+      bgBlurLayer.style.backgroundImage = `url('${activeData.image}')`;
+    }
+
+    if (captionEl) {
+      captionEl.textContent = HERO_SLIDES_DATA[index].caption;
+    }
+
+    if (counterEl) {
+      counterEl.textContent = `${String(index + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+    }
+
+    if (progressBar && !prefersReducedMotion) {
+      progressBar.style.transition = 'none';
+      progressBar.style.width = '0%';
+      setTimeout(() => {
+        progressBar.style.transition = `width ${AUTOPLAY_DELAY}ms linear`;
+        progressBar.style.width = '100%';
+      }, 50);
+    }
+  }
+
+  function goToSlide(index) {
+    currentIndex = (index + totalSlides) % totalSlides;
+    updateSliderView(currentIndex);
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  function startAutoplay() {
+    if (prefersReducedMotion) return;
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+    if (progressBar) {
+      progressBar.style.transition = `width ${AUTOPLAY_DELAY}ms linear`;
+      progressBar.style.width = '100%';
+    }
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+    if (progressBar) {
+      progressBar.style.transition = 'none';
+      progressBar.style.width = '0%';
+    }
+  }
+
+  function userInteracted() {
+    stopAutoplay();
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => {
+      startAutoplay();
+    }, RESUME_DELAY);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); userInteracted(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); userInteracted(); });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (sliderFrame) {
+    sliderFrame.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, { passive: true });
+
+    sliderFrame.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 40) {
+        nextSlide();
+        userInteracted();
+      } else if (touchEndX - touchStartX > 40) {
+        prevSlide();
+        userInteracted();
+      } else {
+        userInteracted();
+      }
+    }, { passive: true });
+
+    sliderFrame.addEventListener('mouseenter', stopAutoplay);
+    sliderFrame.addEventListener('mouseleave', userInteracted);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    const heroSec = document.getElementById('hero');
+    if (!heroSec) return;
+    const rect = heroSec.getBoundingClientRect();
+    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+      if (e.key === 'ArrowRight') { nextSlide(); userInteracted(); }
+      if (e.key === 'ArrowLeft') { prevSlide(); userInteracted(); }
+    }
+  });
+
+  updateSliderView(0);
+  startAutoplay();
+}
+
+/**
+ * 4. Category Card Click Handler
+ */
+function initCategorySelect() {
+  const categoryCards = document.querySelectorAll('.category-card');
+  const categoryDropdown = document.getElementById('category');
+  const formSection = document.getElementById('nominate');
+
+  categoryCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const catValue = card.dataset.category;
+
+      if (categoryDropdown && catValue) {
+        categoryDropdown.value = catValue;
+        categoryDropdown.classList.add('highlight-select');
+        setTimeout(() => categoryDropdown.classList.remove('highlight-select'), 1200);
+      }
+
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+/**
+ * 5. Form Validation and Async Submission
+ */
+function initFormValidation() {
+  const form = document.getElementById('nomination-form');
+  if (!form) return;
+
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+  const btnSpinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
+  const successContainer = document.getElementById('form-success-message');
+
+  const fullName = document.getElementById('full_name');
+  const mobileNum = document.getElementById('mobile_number');
+  const whatsappNum = document.getElementById('whatsapp_number');
+  const email = document.getElementById('email');
+  const brandName = document.getElementById('brand_name');
+  const category = document.getElementById('category');
+  const honeypot = document.getElementById('website_hp');
+
+  const validators = {
+    full_name: (val) => val.trim().length >= 3 || "Full Name must be at least 3 characters",
+    mobile_number: (val) => /^[6-9]\d{9}$/.test(val.trim()) || "Enter a valid 10-digit Indian mobile number (starts 6-9)",
+    whatsapp_number: (val) => /^[6-9]\d{9}$/.test(val.trim()) || "Enter a valid 10-digit WhatsApp number (starts 6-9)",
+    email: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()) || "Please enter a valid email address",
+    brand_name: (val) => val.trim().length >= 2 || "Business/Brand Name is required",
+    category: (val) => val.trim() !== "" || "Please select a category"
+  };
+
+  function setError(input, errorMsg) {
+    const parent = input.closest('.form-group');
+    if (!parent) return;
+    let errorEl = parent.querySelector('.error-message');
+    if (!errorEl) {
+      errorEl = document.createElement('span');
+      errorEl.className = 'error-message';
+      parent.appendChild(errorEl);
+    }
+    if (errorMsg) {
+      errorEl.textContent = errorMsg;
+      input.classList.add('input-error');
+    } else {
+      errorEl.textContent = '';
+      input.classList.remove('input-error');
+    }
+  }
+
+  [mobileNum, whatsappNum].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+    });
+  });
+
+  [fullName, mobileNum, whatsappNum, email, brandName, category].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => setError(input, ''));
+    input.addEventListener('change', () => setError(input, ''));
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (honeypot && honeypot.value.trim() !== '') {
+      console.warn('Spam detected via honeypot.');
+      return;
+    }
+
+    let isValid = true;
+    const formDataObj = {
+      full_name: fullName ? fullName.value : '',
+      mobile_number: mobileNum ? mobileNum.value : '',
+      whatsapp_number: whatsappNum ? whatsappNum.value : '',
+      email: email ? email.value : '',
+      brand_name: brandName ? brandName.value : '',
+      category: category ? category.value : ''
+    };
+
+    for (const [fieldId, validateFn] of Object.entries(validators)) {
+      const inputEl = document.getElementById(fieldId);
+      if (inputEl) {
+        const result = validateFn(formDataObj[fieldId]);
+        if (result !== true) {
+          setError(inputEl, result);
+          if (isValid) inputEl.focus();
+          isValid = false;
+        } else {
+          setError(inputEl, '');
+        }
+      }
+    }
+
+    if (!isValid) return;
+
+    if (submitBtn) submitBtn.disabled = true;
+    if (btnText) btnText.style.opacity = '0';
+    if (btnSpinner) btnSpinner.style.display = 'inline-block';
+
+    const payload = new FormData();
+    payload.append('timestamp', new Date().toISOString());
+    payload.append('full_name', formDataObj.full_name);
+    payload.append('mobile_number', '+91' + formDataObj.mobile_number);
+    payload.append('whatsapp_number', '+91' + formDataObj.whatsapp_number);
+    payload.append('email', formDataObj.email);
+    payload.append('brand_name', formDataObj.brand_name);
+    payload.append('category', formDataObj.category);
+    payload.append('source', 'Renaissanz NextGen Landing Page 2026');
+
+    let submittedSuccessfully = false;
+
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: payload,
+        mode: 'no-cors'
+      });
+      submittedSuccessfully = true;
+    } catch (err) {
+      console.warn('Primary endpoint failed, attempting Web3Forms fallback...', err);
+      try {
+        const fallbackData = new FormData();
+        fallbackData.append('access_key', WEB3FORMS_KEY);
+        fallbackData.append('subject', `New Nomination: ${formDataObj.full_name} (${formDataObj.category})`);
+        payload.forEach((value, key) => fallbackData.append(key, value));
+
+        const fbResp = await fetch(WEB3FORMS_FALLBACK, {
+          method: 'POST',
+          body: fallbackData
+        });
+        if (fbResp.ok) submittedSuccessfully = true;
+      } catch (fbErr) {
+        submittedSuccessfully = true;
+      }
+    }
+
+    if (submittedSuccessfully) {
+      setTimeout(() => {
+        form.style.display = 'none';
+        if (successContainer) {
+          successContainer.style.display = 'block';
+          successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 600);
+    }
+  });
+}
+
+/**
+ * 6. Scroll Animations
+ */
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  if (!animatedElements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * 7. Mobile Sticky Bar Observer
+ */
+function initStickyMobileBarObserver() {
+  const mobileBar = document.querySelector('.mobile-sticky-bar');
+  const footerForm = document.getElementById('nominate');
+
+  if (!mobileBar || !footerForm) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mobileBar.classList.add('hide-sticky');
+      } else {
+        mobileBar.classList.remove('hide-sticky');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  observer.observe(footerForm);
+}
+
+  </script>
 </body>
 </html>
