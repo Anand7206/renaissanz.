@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" shape-rendering="geometricPrecision">
+  <title>Renaissanz Icon</title>
+  <g id="logo-mark" transform="translate(150, 150) scale(0.8)">
+    <polygon points="-25,-155 15,-180 15,-80 -25,-55" fill="#8A8A8A" />
+    <polygon points="-25,-155 15,-80 -40,-20 -80,-55" fill="#FBC02D" />
+    <polygon points="15,-80 75,-40 15,-20" fill="#FB8C00" />
+    <polygon points="75,-40 125,-5 65,35 15,-20" fill="#F4511E" />
+    <polygon points="125,-5 125,55 65,95 65,35" fill="#C2185B" />
+    <polygon points="125,55 65,95 65,150 125,110" fill="#8A8A8A" />
+    <polygon points="-80,-55 -25,-20 -25,45 -80,10" fill="#3D7BE0" />
+    <polygon points="-80,10 -25,45 35,5 -25,-20" fill="#4FC3F7" />
+  </g>
+</svg>

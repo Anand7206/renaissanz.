@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="500" height="150" shape-rendering="geometricPrecision">
+  <title>Renaissanz NextGen Leader Award</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&amp;display=swap');
+      .title-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        letter-spacing: 0.12em;
+        fill: #FFFFFF;
+      }
+      .sub-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 0.18em;
+        fill: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <!-- LOGO MARK (Hexagonal S, height 130px, x: 10..120, center (65, 75)) -->
+  <g id="logo-mark" transform="translate(65, 75) scale(0.38)">
+    <!-- Top-left dark grey strip -->
+    <polygon points="-25,-155 15,-180 15,-80 -25,-55" fill="#8A8A8A" />
+
+    <!-- Upper yellow polygon -->
+    <polygon points="-25,-155 15,-80 -40,-20 -80,-55" fill="#FBC02D" />
+
+    <!-- Upper orange polygon -->
+    <polygon points="15,-80 75,-40 15,-20" fill="#FB8C00" />
+
+    <!-- Right red-orange polygon -->
+    <polygon points="75,-40 125,-5 65,35 15,-20" fill="#F4511E" />
+
+    <!-- Lower-right magenta polygon -->
+    <polygon points="125,-5 125,55 65,95 65,35" fill="#C2185B" />
+
+    <!-- Bottom-right dark grey strip -->
+    <polygon points="125,55 65,95 65,150 125,110" fill="#8A8A8A" />
+
+    <!-- Mid-left blue polygon -->
+    <polygon points="-80,-55 -25,-20 -25,45 -80,10" fill="#3D7BE0" />
+
+    <!-- Lower-left cyan polygon -->
+    <polygon points="-80,10 -25,45 35,5 -25,-20" fill="#4FC3F7" />
+  </g>
+
+  <!-- WORDMARK BLOCK (Gap: 18px, x starts at 138) -->
+  <g id="wordmark" transform="translate(138, 0)">
+    <!-- Line 1: RENAISSANZ -->
+    <text x="0" y="58" class="title-text">RENAISSANZ</text>
+    
+    <!-- Thin 1.5px divider line matching Line 1 width -->
+    <line x1="0" y1="72" x2="345" y2="72" stroke="#D4AF37" stroke-width="1.5" />
+
+    <!-- Line 2: NEXTGEN LEADER AWARD -->
+    <text x="0" y="104" class="sub-text">NEXTGEN LEADER AWARD</text>
+
+    <!-- Thin 1.5px divider line below -->
+    <line x1="0" y1="118" x2="345" y2="118" stroke="#D4AF37" stroke-width="1.5" />
+  </g>
+</svg>
