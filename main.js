@@ -7,7 +7,7 @@ const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_RENAISSANZ_NEX
 const WEB3FORMS_FALLBACK = 'https://api.web3forms.com/submit';
 const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY_PLACEHOLDER';
 
-// Hero Slider Data Array (6 slides total with 100% fail-safe fallback)
+// Hero Slider Data Array (6 slides total with closure-safe fallback)
 const HERO_SLIDES_DATA = [
   {
     image: './assets/hero/hero-01.jpg',
@@ -149,32 +149,46 @@ function initHeroSlider() {
   sliderTrack.innerHTML = '';
   if (dotsContainer) dotsContainer.innerHTML = '';
 
-  HERO_SLIDES_DATA.forEach((slide, idx) => {
-    const slideEl = document.createElement('div');
-    slideEl.className = `hero-slide ${idx === 0 ? 'active' : ''}`;
-    slideEl.setAttribute('role', 'group');
-    slideEl.setAttribute('aria-roledescription', 'slide');
-    slideEl.setAttribute('aria-label', `Slide ${idx + 1} of ${totalSlides}`);
+      HERO_SLIDES_DATA.forEach((slide, idx) => {
+      const slideEl = document.createElement('div');
+      slideEl.className = `hero-slide ${idx === 0 ? 'active' : ''}`;
+      slideEl.setAttribute('role', 'group');
+      slideEl.setAttribute('aria-roledescription', 'slide');
+      slideEl.setAttribute('aria-label', `Slide ${idx + 1} of ${totalSlides}`);
 
-    const isEager = idx <= 1;
-    const imgClass = slide.type === 'poster' ? 'slide-img fit-contain' : 'slide-img fit-cover';
+      const isEager = idx <= 1;
+      const imgClass = slide.type === 'poster' ? 'slide-img fit-contain' : 'slide-img fit-cover';
 
-    let ribbonHTML = '';
-    if (slide.ribbon) {
-      ribbonHTML = `<div class="slide-ribbon">${slide.ribbon}</div>`;
-    }
+      if (slide.ribbon) {
+        const ribbonEl = document.createElement('div');
+        ribbonEl.className = 'slide-ribbon';
+        ribbonEl.textContent = slide.ribbon;
+        slideEl.appendChild(ribbonEl);
+      }
 
-    slideEl.innerHTML = `
-      ${ribbonHTML}
-      <img src="${slide.image}" 
-           onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src=slide.fallback;}"
-           alt="${slide.alt}" 
-           class="${imgClass}" 
-           width="1000" height="1250"
-           ${isEager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" decoding="async"'}>
-    `;
+      const imgEl = document.createElement('img');
+      imgEl.src = slide.image;
+      imgEl.alt = slide.alt;
+      imgEl.className = imgClass;
+      imgEl.width = 1000;
+      imgEl.height = 1250;
+      if (isEager) {
+        imgEl.loading = 'eager';
+        imgEl.setAttribute('fetchpriority', 'high');
+      } else {
+        imgEl.loading = 'lazy';
+        imgEl.setAttribute('decoding', 'async');
+      }
 
-    sliderTrack.appendChild(slideEl);
+      imgEl.onerror = () => {
+        if (!imgEl.dataset.fb && slide.fallback) {
+          imgEl.dataset.fb = '1';
+          imgEl.src = slide.fallback;
+        }
+      };
+
+      slideEl.appendChild(imgEl);
+      sliderTrack.appendChild(slideEl);
 
     if (dotsContainer) {
       const dot = document.createElement('button');
