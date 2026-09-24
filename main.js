@@ -477,12 +477,23 @@ function initFormValidation() {
     }
 
     if (submittedSuccessfully) {
+      const emailSubject = encodeURIComponent(`Nomination Application 2026 - ${formDataObj.full_name} (${formDataObj.brand_name})`);
+      const emailBody = encodeURIComponent(`Respected SammRenaissance Team,\n\nI would like to submit my nomination for the Renaissanz NextGen Leader Award 2026.\n\nNomination Details:\n------------------------------------------\nFull Name: ${formDataObj.full_name}\nMobile Number: +91 ${formDataObj.mobile_number}\nWhatsApp Number: +91 ${formDataObj.whatsapp_number}\nEmail Address: ${formDataObj.email}\nBusiness / Brand Name: ${formDataObj.brand_name}\nCategory: ${formDataObj.category}\n------------------------------------------\n\nThank you,\n${formDataObj.full_name}`);
+      const mailtoUrl = `mailto:teamsammrenaissance@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+      const mailtoBtn = document.getElementById('email-mailto-btn');
+      if (mailtoBtn) {
+        mailtoBtn.href = mailtoUrl;
+      }
+
       setTimeout(() => {
         form.style.display = 'none';
         if (successContainer) {
           successContainer.style.display = 'block';
           successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        // Redirect user to open email app targeting teamsammrenaissance@gmail.com
+        window.location.href = mailtoUrl;
       }, 600);
     }
   });

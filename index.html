@@ -1654,8 +1654,14 @@ select.form-control option {
               </div>
               <h4 class="success-title">Nomination Received!</h4>
               <p class="success-text">
-                Thank you! Your nomination has been received. Our team will contact you on WhatsApp shortly.
+                Thank you! Your nomination details are ready. Opening your email app to send directly to <strong>teamsammrenaissance@gmail.com</strong>...
               </p>
+              <div id="email-button-wrapper" style="margin-top: 1.5rem;">
+                <a id="email-mailto-btn" href="mailto:teamsammrenaissance@gmail.com" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  Send Email to teamsammrenaissance@gmail.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -2162,12 +2168,23 @@ function initFormValidation() {
     }
 
     if (submittedSuccessfully) {
+      const emailSubject = encodeURIComponent(`Nomination Application 2026 - ${formDataObj.full_name} (${formDataObj.brand_name})`);
+      const emailBody = encodeURIComponent(`Respected SammRenaissance Team,\n\nI would like to submit my nomination for the Renaissanz NextGen Leader Award 2026.\n\nNomination Details:\n------------------------------------------\nFull Name: ${formDataObj.full_name}\nMobile Number: +91 ${formDataObj.mobile_number}\nWhatsApp Number: +91 ${formDataObj.whatsapp_number}\nEmail Address: ${formDataObj.email}\nBusiness / Brand Name: ${formDataObj.brand_name}\nCategory: ${formDataObj.category}\n------------------------------------------\n\nThank you,\n${formDataObj.full_name}`);
+      const mailtoUrl = `mailto:teamsammrenaissance@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+      const mailtoBtn = document.getElementById('email-mailto-btn');
+      if (mailtoBtn) {
+        mailtoBtn.href = mailtoUrl;
+      }
+
       setTimeout(() => {
         form.style.display = 'none';
         if (successContainer) {
           successContainer.style.display = 'block';
           successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        // Redirect user to open email app targeting teamsammrenaissance@gmail.com
+        window.location.href = mailtoUrl;
       }, 600);
     }
   });
